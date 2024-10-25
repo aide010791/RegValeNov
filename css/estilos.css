@@ -1,0 +1,395 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url(fondo.webp);
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    padding: 10px 5px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgb(255, 255, 255, 0));
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    
+}
+
+.logo-izquierdo img, .logo-derecho img {
+    width: 100px; /* Ajusta el ancho de los logos a 50px */
+    height: 100px; /* Ajusta la altura de los logos a 50px */
+    object-fit: contain; /* Asegura que los logos mantengan sus proporciones */
+    padding: 0;
+}
+
+
+.titulo h1 {
+    flex-grow: 1; /* Permite que el título ocupe el espacio restante */
+    text-align: center;
+    padding: 0;
+    font-family: 'Roboto Slab', serif;
+}
+
+#contenedor-superior {
+    width: calc(100% - 40px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgb(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #040404; /* Corregido para que sea un valor de color válido */
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0; /* Aumentado para dar espacio entre el header y el contenedor */
+    box-sizing: border-box;
+}
+
+.linea {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.campo {
+    margin: 0 50px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+}
+
+
+input[type="text"] {
+    width: 100%; /* Ocupará el 100% del ancho de su contenedor padre */
+    box-sizing: border-box; /* Asegura que el padding y el borde estén incluidos en el ancho total */
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+}
+
+/* Estilo para el campo de selección "CARRERA" en el contenedor superior */
+select#carrera {
+    width: 100%; /* Ocupará el 100% del ancho de su contenedor padre */
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+    padding: 8px; /* Ajusta el espacio interior */
+    margin-top: 5px; /* Margen superior para separación */
+    border-radius: 5px; /* Bordes redondeados para consistencia */
+    border: 1px solid #ccc; /* Color del borde similar a otros campos */
+    font-size: 20px;
+}
+
+
+.btn-registro,
+.btn-guardar,
+.btn-modificar {
+    background-image: linear-gradient(135deg, #008aff, #86d472);
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: block;
+    height: 50px;
+    font-size: 1.4em;
+    font-weight: 600;
+    padding: 4px;
+    position: relative;
+    text-decoration: none;
+    width: 7em;
+    z-index: 2;
+    transition: color 0.5s ease;
+    text-align: center;
+}
+
+/* Hover effect to keep text color white */
+.btn-registro:hover,
+.btn-guardar:hover,
+.btn-modificar:hover {
+    color: #ffffff;
+}
+
+/* Inner span styling for button effect */
+.btn-registro span,
+.btn-guardar span,
+.btn-modificar span {
+    align-items: center;
+    background: #0e0e10;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    transition: background 0.5s ease;
+    width: 100%;
+}
+
+/* Hover effect to change inner span background */
+.btn-registro:hover span,
+.btn-guardar:hover span,
+.btn-modificar:hover span {
+    background: transparent;
+}
+
+.botones-accion {
+    display: flex; /* Cambia el diseño para que los elementos hijos se alineen en una fila */
+    justify-content:center; /* Separa los botones de manera uniforme */
+    gap: 10px; /* Añade un espacio entre los botones */
+    margin-top: 20px; /* Ajusta el margen superior si es necesario */
+}
+
+input[type="number"]{
+    width: 50px; /* Ajusta el ancho segÃºn tus necesidades */
+    font-family: 'Roboto Slab', serif;
+    margin-left: 15px;
+    
+}
+
+.contenedor-principal {
+    display: flex;
+    flex-direction: row; /* Cambia la dirección a fila */
+    justify-content: space-between; /* Alinea los elementos separados entre sí */
+    align-items: flex-start; /* Alinea los elementos al inicio de su eje transversal */
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+input[type="date"] {
+    font-size: 1.2em;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+  
+.contenedor-equipos {
+    width: calc(50% - 10px); /* Ajusta el ancho al 50% menos un margen */
+    height: auto; /* O una altura fija si es necesario */
+    margin-right: 20px; /* Añade un margen a la derecha si deseas separar los contenedores */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgb(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5); /* Escalar el checkbox a 1.5 veces su tamaño original */
+    margin-right: 10px;    /* Espacio entre el checkbox y el texto */
+}
+  
+.contenedor-derecho {
+    display: flex;
+    flex-direction: column; /* Asegura que los contenedores hijos se apilen verticalmente */
+    width: calc(50% - 10px); /* Ajusta el ancho al 50% menos un margen */
+    height: auto;
+}
+  
+.contenedor-puntas, .contenedor-stm32f4{
+    width: 100%; /* Los contenedores hijos ocupan todo el ancho del contenedor padre */
+    /*margin-top: 20px; /* Añade un margen superior para separar los contenedores */
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgb(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    
+}
+
+.contenedor-inferior{
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgb(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.contenedor-herramientas{
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgb(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 14px;
+}
+
+.contenedor-equipos div {
+    margin-bottom: 5px; /* Ajusta este valor según tus necesidades para aumentar la separación horizontal */
+    
+}
+
+.contenedor-equipos input[type="checkbox"] {
+    margin-bottom: 5px; /* Ajusta este valor según tus necesidades */
+    margin-right: 20px;
+    
+}
+
+.checkbox-campo {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el checkbox y el campo numérico */
+    margin-bottom: 5px; /* Espacio entre cada par */
+    
+    
+}
+.checkbox-campo input[type="number"] {
+    width: 50px; /* O el ancho que prefieras */
+    display: none; /* Inicia oculto */    
+      
+}
+
+
+.nombre-equipo, .cantidad-equipo {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Ajusta el espacio entre el checkbox y el campo numérico */
+}
+
+.cantidad-equipo input {
+    display: none; /* Inicialmente oculto, será mostrado por el script JS cuando el checkbox esté marcado */
+    width: 60px;
+    margin-right: 400px;
+}
+
+.herramienta-item {
+    display: flex;
+    align-items: center;
+}
+
+.equipo {
+    display: flex; /* Esto alinea los elementos hijos (checkbox y campo numérico) en una fila */
+    justify-content: flex-start; /* Alinea los elementos al inicio del contenedor */
+    align-items: center; /* Centra los elementos verticalmente */
+    margin-bottom: 5px;
+}
+
+.nombre-equipo {
+    flex-grow: 1; /* Permite que el contenedor del nombre del equipo ocupe todo el espacio disponible */
+}
+
+.cantidad-equipo {
+    flex-shrink: 0; /* Evita que el campo numérico se encoja si hay poco espacio */
+}
+
+
+#agregar-herramienta {
+    margin-top: 15px;
+    margin-right: 50px; /* Ajusta este valor según el espacio que desees */
+    background-image: linear-gradient(135deg, #008aff, #86d472);
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: block;
+    height: 40px; /* Un tamaño más pequeño que los otros botones */
+    font-size: 1em; /* Ajuste para reducir el tamaño del texto */
+    font-weight: 600;
+    padding: 4px;
+    position: relative;
+    text-decoration: none;
+    width: 10em; /* Más pequeño en ancho */
+    z-index: 2;
+    transition: color 0.5s ease;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Hover effect for "Agregar" button */
+#agregar-herramienta:hover {
+    color: #ffffff;
+}
+
+#agregar-herramienta span {
+    align-items: center;
+    background: #0e0e10;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    transition: background 0.5s ease;
+    width: 100%;
+}
+
+#agregar-herramienta:hover span {
+    background: transparent;
+}
+
+/* Aumentar el tamaño del campo de texto "Escribe una herramienta" */
+#herramienta-input {
+    width: 100%; /* Ajusta el ancho al 100% del contenedor padre */
+    max-width: 600px; /* Puedes establecer un tamaño máximo si lo deseas */
+    padding: 8px; /* Aumenta el espacio interno del campo */
+    font-size: 1.2em; /* Aumenta el tamaño del texto dentro del campo */
+    border-radius: 6px; /* Bordes redondeados */
+    box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho total */
+}
+
+/* Estilo para el contenedor de la lista de herramientas */
+#lista-herramientas {
+    background-color: rgba(0, 0, 0, 0.1); /* Fondo con transparencia */
+    border: 1px solid #ccc; /* Borde sutil para diferenciar */
+    padding: 10px; /* Espacio interior para separar el contenido del borde */
+    border-radius: 6px; /* Bordes redondeados */
+    max-height: 200px; /* Limita la altura máxima del contenedor */
+    overflow-y: auto; /* Agrega un scroll si la lista es muy larga */
+    margin-top: 10px; /* Separación del campo de entrada */
+}
+
+/* Opcional: estiliza cada ítem de la lista de herramientas */
+.herramienta-item {
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: #f0f0f0; /* Color de fondo para cada ítem */
+    border-radius: 4px; /* Bordes redondeados para cada ítem */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.herramienta-item span {
+    cursor: pointer;
+    color: red; /* Color para el ícono de eliminar */
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+    .linea {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .campo {
+        margin: 10px 0;
+    }
+
+    .contenedor-inferior {
+        width: calc(100% - 20px);
+        margin: 10px 0;
+    }
+
+    .contenedor-principal{
+        width: calc(100% - 20px);
+        margin: 10px 0;
+        align-content: center;
+        
+
+    }
+
+    header{
+        width: calc(100% - 20px);
+        margin: 10px 0;
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
